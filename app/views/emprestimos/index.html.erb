@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Emprestimos</h1>
+
+<div id="emprestimos">
+  <% @emprestimos.each do |emprestimo| %>
+    <%= render emprestimo %>
+    <p>
+      <%= link_to "Show this emprestimo", emprestimo %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New emprestimo", new_emprestimo_path %>
