@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_05_02_135057) do
+ActiveRecord::Schema[7.1].define(version: 2025_05_06_132410) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,15 +44,25 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_02_135057) do
     t.index ["categoria_id"], name: "index_livros_on_categoria_id"
   end
 
+  create_table "perfils", force: :cascade do |t|
+    t.string "nome"
+    t.string "descricao"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "usuarios", force: :cascade do |t|
     t.string "nome"
     t.string "email"
     t.string "telefone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "perfil_id", null: false
+    t.index ["perfil_id"], name: "index_usuarios_on_perfil_id"
   end
 
   add_foreign_key "emprestimos", "livros"
   add_foreign_key "emprestimos", "usuarios"
   add_foreign_key "livros", "categoria", column: "categoria_id"
+  add_foreign_key "usuarios", "perfils"
 end

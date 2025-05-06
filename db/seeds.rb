@@ -13,6 +13,13 @@ Emprestimo.destroy_all
 Livro.destroy_all
 Categoria.destroy_all
 Usuario.destroy_all
+Perfil.destroy_all
+
+puts "Criando perfis..."
+admin = Perfil.create!(nome: "Administrador", descricao: "Acesso total ao sistema")
+comum = Perfil.create!(nome: "Usuário Comum", descricao: "Acesso básico")
+bibliotecario = Perfil.create!(nome: "Bibliotecário", descricao: "Gerencia livros e empréstimos")
+
 
 puts "Criando categorias..."
 categorias = [
@@ -32,9 +39,9 @@ livros = [
 
 puts "Criando usuários..."
 usuarios = [
-  Usuario.create!(nome: "Felipe Silva", email: "felipe@example.com", telefone: "11988887777"),
-  Usuario.create!(nome: "Luiz Loch", email: "luiz@example.com", telefone: "21999998888"),
-  Usuario.create!(nome: "Neviton Velho", email: "neviton@example.com", telefone: "31900009999")
+  Usuario.create!(nome: "Felipe Silva", email: "felipe@example.com", telefone: "11988887777", perfil: admin),
+  Usuario.create!(nome: "Luiz Loch", email: "luiz@example.com", telefone: "21999998888", perfil: comum),
+  Usuario.create!(nome: "Neviton Velho", email: "neviton@example.com", telefone: "31900009999", perfil: bibliotecario)
 ]
 
 puts "Criando empréstimos..."
