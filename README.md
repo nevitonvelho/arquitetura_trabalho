@@ -18,32 +18,10 @@ Isso irá:
 - Criar o *container* do banco de dados (db)
 - Criar o *container* da aplicação Rails (web)
 - Fazer o *bind* das portas para acesso local
+- Criar as tabelas no banco de dados
+- Fazer a *migration* das modificações do banco de dados
+- Fazer o *seed* do banco de dados
 
-
-## Criar o banco de dados
-
-Após os *containers* estarem rodando, execute:
-
-```
-docker compose exec web ./bin/rails db:create
-```
-
-Este comando cria o banco de dados PostgreSQL definido no seu `config/database.yml`.
-
-
-## Rodar as migrations
-
-Com o banco criado, rode as migrations para criar as tabelas:
-
-```
-docker compose exec web ./bin/rails db:migrate
-```
-
-Se quiser popular o banco (caso tenha seeds):
-
-```
-docker compose exec web ./bin/rails db:seed
-```
 
 Acessar a aplicação
 
@@ -66,4 +44,8 @@ docker compose exec web ./bin/rails db:migrate
 docker compose exec web ./bin/rails g scaffold User name:string email:string
 ```
 
-Para resetar tudo (containers, volumes e imagens):
+Para apagar tudo (containers, volumes e imagens):
+
+```
+docker compose down -v
+```
