@@ -1,9 +1,8 @@
-<%= form_with(model: livro) do |form| %>
+<%= form_with(model: livro, class: "needs-validation") do |form| %>
   <% if livro.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(livro.errors.count, "error") %> prohibited this livro from being saved:</h2>
-
-      <ul>
+    <div class="alert alert-danger">
+      <h4 class="alert-heading"><%= pluralize(livro.errors.count, "erro") %> impediram o salvamento do livro:</h4>
+      <ul class="mb-0">
         <% livro.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,37 +10,37 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :titulo, style: "display: block" %>
-    <%= form.text_field :titulo %>
+  <div class="mb-3">
+    <%= form.label :titulo, class: "form-label" %>
+    <%= form.text_field :titulo, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :autor, style: "display: block" %>
-    <%= form.text_field :autor %>
+  <div class="mb-3">
+    <%= form.label :autor, class: "form-label" %>
+    <%= form.text_field :autor, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :editora, style: "display: block" %>
-    <%= form.text_field :editora %>
+  <div class="mb-3">
+    <%= form.label :editora, class: "form-label" %>
+    <%= form.text_field :editora, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :ano_publicacao, style: "display: block" %>
-    <%= form.number_field :ano_publicacao %>
+  <div class="mb-3">
+    <%= form.label :ano_publicacao, class: "form-label" %>
+    <%= form.number_field :ano_publicacao, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :isbn, style: "display: block" %>
-    <%= form.text_field :isbn %>
+  <div class="mb-3">
+    <%= form.label :isbn, class: "form-label" %>
+    <%= form.text_field :isbn, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :categoria_id, style: "display: block" %>
-    <%= form.text_field :categoria_id %>
+  <div class="mb-3">
+    <%= form.label :categoria_id, class: "form-label" %>
+    <%= form.text_field :categoria_id, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="d-grid">
+    <%= form.submit class: "btn btn-success" %>
   </div>
 <% end %>

@@ -1,32 +1,13 @@
-<div id="<%= dom_id livro %>">
-  <p>
-    <strong>Titulo:</strong>
-    <%= livro.titulo %>
-  </p>
+<div id="<%= dom_id livro %>" class="card mb-3 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title"><strong><%= livro.titulo %></strong></h5>
+    <h6 class="card-subtitle text-muted mb-3">Autor: <%= livro.autor %></h6>
 
-  <p>
-    <strong>Autor:</strong>
-    <%= livro.autor %>
-  </p>
-
-  <p>
-    <strong>Editora:</strong>
-    <%= livro.editora %>
-  </p>
-
-  <p>
-    <strong>Ano publicacao:</strong>
-    <%= livro.ano_publicacao %>
-  </p>
-
-  <p>
-    <strong>Isbn:</strong>
-    <%= livro.isbn %>
-  </p>
-
-  <p>
-    <strong>Categoria:</strong>
-    <%= livro.categoria_id %>
-  </p>
-
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Editora:</strong> <%= livro.editora %></li>
+      <li class="list-group-item"><strong>Ano de Publicação:</strong> <%= livro.ano_publicacao %></li>
+      <li class="list-group-item"><strong>ISBN:</strong> <%= livro.isbn %></li>
+      <li class="list-group-item"><strong>Categoria ID:</strong> <%= livro.categoria_id %></li>
+    </ul>
+  </div>
 </div>

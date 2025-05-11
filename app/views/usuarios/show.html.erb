@@ -1,10 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-4">
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
 
-<%= render @usuario %>
+  <h1 class="mb-4">Detalhes do Usuário</h1>
 
-<div>
-  <%= link_to "Edit this usuario", edit_usuario_path(@usuario) %> |
-  <%= link_to "Back to usuarios", usuarios_path %>
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <%= render @usuario %>
+    </div>
+  </div>
 
-  <%= button_to "Destroy this usuario", @usuario, method: :delete %>
+  <div class="d-flex justify-content-between">
+    <div>
+      <%= link_to "Editar este usuário", edit_usuario_path(@usuario), class: "btn btn-warning btn-sm" %>
+    </div>
+    <div>
+      <%= link_to "Voltar para usuários", usuarios_path, class: "btn btn-secondary btn-sm" %>
+      <%= button_to "Excluir este usuário", @usuario, method: :delete, data: { confirm: "Você tem certeza?" }, class: "btn btn-danger btn-sm ms-2" %>
+    </div>
+  </div>
 </div>

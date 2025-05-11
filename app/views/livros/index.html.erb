@@ -1,14 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<% if notice %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
 
-<h1>Livros</h1>
-
-<div id="livros">
-  <% @livros.each do |livro| %>
-    <%= render livro %>
-    <p>
-      <%= link_to "Show this livro", livro %>
-    </p>
-  <% end %>
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <h1 class="mb-0">Livros</h1>
+  <%= link_to "Novo Livro", new_livro_path, class: "btn btn-primary" %>
 </div>
 
-<%= link_to "New livro", new_livro_path %>
+<div id="livros" class="row row-cols-1 row-cols-md-2 g-4">
+  <% @livros.each do |livro| %>
+    <div class="col">
+      <div class="card h-100">
+        <div class="card-body">
+          <%= render livro %>
+        </div>
+        <div class="card-footer bg-transparent border-0">
+          <%= link_to "Ver detalhes", livro, class: "btn btn-outline-secondary btn-sm" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

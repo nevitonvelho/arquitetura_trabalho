@@ -1,10 +1,14 @@
-<h1>Editing livro</h1>
+<div class="container mt-4">
+  <h1 class="mb-4">Editar Livro</h1>
 
-<%= render "form", livro: @livro %>
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <%= render "form", livro: @livro %>
+    </div>
+  </div>
 
-<br>
-
-<div>
-  <%= link_to "Show this livro", @livro %> |
-  <%= link_to "Back to livros", livros_path %>
+  <div class="mt-4 d-flex gap-3">
+    <%= link_to "Ver este livro", @livro, class: "btn btn-outline-primary" %>
+    <%= link_to "Voltar para a lista", livros_path, class: "btn btn-secondary" %>
+  </div>
 </div>

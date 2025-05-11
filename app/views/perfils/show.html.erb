@@ -1,10 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-4">
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
 
-<%= render @perfil %>
+  <%= render @perfil %>
 
-<div>
-  <%= link_to "Edit this perfil", edit_perfil_path(@perfil) %> |
-  <%= link_to "Back to perfils", perfils_path %>
-
-  <%= button_to "Destroy this perfil", @perfil, method: :delete %>
+  <div class="mt-4 d-flex gap-2">
+    <%= link_to "Editar este perfil", edit_perfil_path(@perfil), class: "btn btn-primary" %>
+    <%= link_to "Voltar para perfis", perfils_path, class: "btn btn-secondary" %>
+    <%= button_to "Excluir este perfil", @perfil, method: :delete, data: { confirm: "Tem certeza?" }, class: "btn btn-danger" %>
+  </div>
 </div>

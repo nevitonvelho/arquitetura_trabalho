@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p class="text-success"><%= notice %></p>
 
-<%= render @emprestimo %>
+  <%= render @emprestimo %>
 
-<div>
-  <%= link_to "Edit this emprestimo", edit_emprestimo_path(@emprestimo) %> |
-  <%= link_to "Back to emprestimos", emprestimos_path %>
+  <div class="mt-3">
+    <%= link_to "Editar este empréstimo", edit_emprestimo_path(@emprestimo), class: "btn btn-primary" %> |
+    <%= link_to "Voltar para os empréstimos", emprestimos_path, class: "btn btn-secondary" %>
 
-  <%= button_to "Destroy this emprestimo", @emprestimo, method: :delete %>
+    <%= button_to "Excluir este empréstimo", @emprestimo, method: :delete, class: "btn btn-danger", data: { confirm: "Tem certeza que deseja excluir este empréstimo?" } %>
+  </div>
 </div>

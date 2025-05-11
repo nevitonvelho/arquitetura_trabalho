@@ -1,12 +1,9 @@
-<div id="<%= dom_id perfil %>">
-  <p>
-    <strong>Nome:</strong>
-    <%= perfil.nome %>
-  </p>
+<div id="<%= dom_id perfil %>" class="card mb-3 shadow-sm">
+  <div class="card-body">
+    <h5 class="card-title"><strong><%= perfil.nome %></strong></h5>
 
-  <p>
-    <strong>Descricao:</strong>
-    <%= perfil.descricao %>
-  </p>
-
+    <p class="card-text">
+      <strong>Descrição:</strong> <%= perfil.descricao %>
+    </p>
+  </div>
 </div>

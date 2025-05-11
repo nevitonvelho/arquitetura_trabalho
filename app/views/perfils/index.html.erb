@@ -1,14 +1,24 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Perfils</h1>
-
-<div id="perfils">
-  <% @perfils.each do |perfil| %>
-    <%= render perfil %>
-    <p>
-      <%= link_to "Show this perfil", perfil %>
-    </p>
+<div class="container mt-4">
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New perfil", new_perfil_path %>
+  <h1 class="mb-4">Perfis</h1>
+
+  <div id="perfils" class="row row-cols-1 g-4">
+    <% @perfils.each do |perfil| %>
+      <div class="col">
+        <%= render perfil %>
+        <div class="mt-2">
+          <%= link_to "Ver este perfil", perfil, class: "btn btn-outline-primary btn-sm" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="mt-4">
+    <%= link_to "Novo perfil", new_perfil_path, class: "btn btn-success" %>
+  </div>
+</div>

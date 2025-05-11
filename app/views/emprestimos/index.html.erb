@@ -1,14 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+  <p class="text-success"><%= notice %></p>
+  <h1>Empréstimos</h1>
+  <%= link_to "New empréstimo", new_emprestimo_path, class: "btn btn-primary mt-3" %>
+</div>
 
-<h1>Emprestimos</h1>
 
-<div id="emprestimos">
+
+<div id="emprestimos" class="list-group">
   <% @emprestimos.each do |emprestimo| %>
-    <%= render emprestimo %>
-    <p>
-      <%= link_to "Show this emprestimo", emprestimo %>
-    </p>
+    <div class="list-group-item container">
+      <%= render emprestimo %>
+      <p style="margin-top: 2rem">
+        <%= link_to "Show this empréstimo", emprestimo, class: "btn btn-info btn-sm" %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New emprestimo", new_emprestimo_path %>
+

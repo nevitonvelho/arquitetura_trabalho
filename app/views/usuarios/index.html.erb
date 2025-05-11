@@ -1,14 +1,22 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Usuarios</h1>
-
-<div id="usuarios">
-  <% @usuarios.each do |usuario| %>
-    <%= render usuario %>
-    <p>
-      <%= link_to "Show this usuario", usuario %>
-    </p>
+<div class="container mt-4">
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <%= notice %>
+    </div>
   <% end %>
-</div>
 
-<%= link_to "New usuario", new_usuario_path %>
+  <h1 class="mb-4">Usuários</h1>
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 mb-4">
+    <% @usuarios.each do |usuario| %>
+      <div class="col">
+        <%= render usuario %>
+        <div class="mt-2">
+          <%= link_to "Ver este usuário", usuario, class: "btn btn-sm btn-outline-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <%= link_to "Novo Usuário", new_usuario_path, class: "btn btn-primary" %>
+</div>
