@@ -1,7 +1,7 @@
-# Arquitetura De Software - Atividade MVP
+# Arquitetura De Software - Atividade MVC
 
 Este projeto utiliza Docker para configurar o ambiente de desenvolvimento com PostgreSQL e Ruby on Rails.
-O propósito esta atividade é criar um gerenciador de biblioteca usando a arquitetura MVP.
+O propósito esta atividade é criar um gerenciador de biblioteca usando a arquitetura MVC.
 
 ## Pré-requisitos:
 - Docker instalado
